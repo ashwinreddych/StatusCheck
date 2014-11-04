@@ -19,6 +19,8 @@ public class StatusDriver {
 			
 			registerStatus.registerStatusDetails(profileDetails);
 			
+			// Step 2 check for Registered Users.
+			
 		}
 		
 	}
