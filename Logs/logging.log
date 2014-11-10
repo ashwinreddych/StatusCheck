@@ -1,0 +1,16 @@
+2014-11-05 13:57:12 INFO  StatusDriver:34 - Logging initialized.
+2014-11-05 14:16:00 INFO  StatusDriver:33 - Logging initialized.
+2014-11-05 14:16:00 INFO  StatusDriver:49 - Status Driver Started
+2014-11-05 14:20:59 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:21:59 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:22:24 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:23:30 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:25:21 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:25:21 INFO  StatusDriver:23 - Tested
+2014-11-05 14:29:55 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:29:55 INFO  RegisterStatus:25 - Tested
+2014-11-05 14:58:16 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 14:58:16 INFO  RegisterStatus:24 - Tested
+2014-11-05 15:14:14 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 15:15:36 INFO  StatusDriver:32 - Status Driver Started
+2014-11-05 15:15:36 DEBUG RegisterStatus:44 -  select id, email, name,status,verify_code  from ashdb.register where status = '0'
