@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Category;
+
 import com.ash.statuscheck.jdbc.JDBCConnection;
 import com.ash.statuscheck.mail.SendMail;
 import com.ash.statuscheck.pojo.ProfileDetails;
@@ -13,7 +15,9 @@ import com.ash.statuscheck.pojo.ProfileDetails;
 
 public class RegisterStatus {
 	
-	public boolean registerStatusDetails(ProfileDetails profileDetails) {
+	  final Category logger = Category.getInstance(this.getClass().getName());
+	 
+	public boolean sendConfirmationEmail(ProfileDetails profileDetails) {
 		boolean value = false;
 		
 		value = checkRegistrationStatus(profileDetails);
@@ -35,8 +39,10 @@ public class RegisterStatus {
 					db.pwd());
 			stmt = conn.createStatement();
 
-			String sql = " select id, email, name,status,verify_code  from ashdb.register where status = '0'"; //email = 'ashwinreddy509@gmail.com'";
-
+			String sql = " select id, email, name,status,verify_code  from ashdb.register where status = '0'"; 
+			
+			logger.debug(sql);
+			
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				value = true;
@@ -46,7 +52,6 @@ public class RegisterStatus {
 				profileDetails.setEmail(rs.getString("email"));
 				profileDetails.setVerifyCode(rs.getString("verify_code"));
 				
-				System.out.println(profileDetails.getUserId());
 				boolean verificationStatus =  sendMail.sendVerificationEmail(profileDetails);
 				
 				if(verificationStatus){

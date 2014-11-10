@@ -10,9 +10,13 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.log4j.Category;
+
 import com.ash.statuscheck.pojo.ProfileDetails;
 
 public class SendMail {
+	 final Category logger = Category.getInstance(this.getClass().getName());
+	
 	public boolean sendVerificationEmail(ProfileDetails profileDetails) {
 		boolean value = false;
 		
@@ -54,10 +58,10 @@ public class SendMail {
 			value = true;
 			Transport.send(message);
 			
-			System.out.println("EMail Sent Sucessfully to :" +profileDetails.getEmail());
+			logger.debug("EMail sent Sucessfully to User:" +profileDetails.getUserId());
  
 		} catch (MessagingException e) {
-			System.out.println("Email Failed for User :" +profileDetails.getEmail());
+			logger.error("Couldn't send Email to User :" +profileDetails.getEmail());
 			throw new RuntimeException(e);
 		}
 		return value;

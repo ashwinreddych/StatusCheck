@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="C:/MyFiles/Workspace/jars/javaee.jar"/>
 	<classpathentry kind="lib" path="C:/MyFiles/Workspace/jars/mail.jar"/>
 	<classpathentry kind="lib" path="C:/MyFiles/Workspace/jars/com.mysql.jdbc_5.1.5.jar/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/MyFiles/HEB Docs/Jars/log4j.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
